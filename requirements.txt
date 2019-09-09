@@ -1,0 +1,11 @@
+colorama
+requests
+structlog
+marshmallow_sqlalchemy
+pypercard
+pytest
+pytest-cov
+sqlalchemy
+sqlalchemy-utils
+# snapshottest
+# rfc3339
