@@ -7,5 +7,3 @@ pytest
 pytest-cov
 sqlalchemy
 sqlalchemy-utils
-# snapshottest
-# rfc3339

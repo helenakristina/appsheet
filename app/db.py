@@ -9,6 +9,7 @@ import sqlalchemy as sa
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import table, column, select, asc
 
+from logger import logger
 
 engine = sa.create_engine("sqlite:///:memory:")
 session = scoped_session(sessionmaker(bind=engine))
@@ -29,7 +30,7 @@ def insert_user(user):
         session.add(user)
         session.commit()
     except Exception as e:
-        print(e)
+        logger.error(e)
 
 
 def get_youngest_five():
@@ -54,4 +55,4 @@ def get_youngest_five():
 
         return sorted(user_list, key=lambda u: u.name)
     except Exception as e:
-        print(e)
+        logger.error(e)

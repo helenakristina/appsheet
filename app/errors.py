@@ -1,23 +1,15 @@
 """
-Method for interfacing with web services
-
-Parameters: 
-url (string): The location of the web service
-
-Returns: 
-json response: On success, returns JSON response. On failure, logs error output
+Custom exception for non-us phone number
 """
 
 
 class NonUSPhoneNumberException(Exception):
-    """
-    Method for interfacing with web services
-  
+    """  
     Parameters: 
-    url (string): The location of the web service
+    message (string): Optional- message for the exception
   
-    Returns: 
-    json response: On success, returns JSON response. On failure, logs error output
+    Raises: 
+    An exception for any phone number that is not 10 digits
     """
 
     pass
