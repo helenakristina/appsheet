@@ -5,7 +5,6 @@ Pypercard UI
 """
 
 from functools import wraps
-import requests
 
 from db import insert_user, get_youngest_five
 from errors import NonUSPhoneNumberException
@@ -13,6 +12,7 @@ from logger import logger
 from models import User
 from schemas import UserSchema
 from ui import build_and_run_app
+from security import safe_requests
 
 
 def get_request_json(url: str):
@@ -26,7 +26,7 @@ def get_request_json(url: str):
     json response: On success, returns JSON response. On failure, logs error output
     """
     try:
-        request = requests.get(url)
+        request = safe_requests.get(url)
         return request.json()
     except Exception as e:
         logger.error(f"Error response for {url}. {e}")
