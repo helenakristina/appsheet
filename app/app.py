@@ -26,7 +26,7 @@ def get_request_json(url: str):
     json response: On success, returns JSON response. On failure, logs error output
     """
     try:
-        request = requests.get(url)
+        request = requests.get(url, timeout=60)
         return request.json()
     except Exception as e:
         logger.error(f"Error response for {url}. {e}")
