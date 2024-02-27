@@ -72,8 +72,7 @@ def get_user_lists():
         result = get_request_json(list_url)
         yield result["result"]
 
-        has_token = "token" in result
-        if has_token:
+        if has_token := "token" in result:
             list_url = f"{config['LIST_URL']}?token={result['token']}"
 
 
