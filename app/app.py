@@ -130,7 +130,6 @@ def main(*args, **kwargs):
 
 
 if __name__ == "__main__":
-    global config
     config = {
         "URL_BASE": "https://appsheettest1.azurewebsites.net/sample/",
         "LIST_URL": "https://appsheettest1.azurewebsites.net/sample/list/",
